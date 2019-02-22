@@ -1,0 +1,23 @@
+disabled_rules:
+- line_length
+- function_body_length
+- type_name
+- identifier_name
+- multiple_closures_with_trailing_closure
+
+excluded:
+- fastlane/
+- vendor/
+
+identifier_name:
+  min_length:
+    warning: 1
+    error: 1
+
+type_body_length:
+    warning: 300
+    error: 800
+
+file_length:
+    warning: 1000
+    error: 1500
