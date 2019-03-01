@@ -28,7 +28,7 @@ protocol PaginationControllerProtocol: AnyObject {
     func fetchData(at offset: Int, complete: @escaping CompleteClosure)
 
     /// The view component for showing the data in tableview, collectionview, or customized view such as carousel, etc
-    var listViewContainer: ListViewContainerProtocol? { get }
+    var listViewHost: ListViewHostProtocol? { get }
 
     /// The data containers
     var container: [T] { get set }
@@ -50,7 +50,7 @@ extension PaginationControllerProtocol {
     func willScrollTo(index: Int) {
         // User scrolls to the last item and more items are needed to be fetched
         if (index == container.count - 1 && container.count < totalCount) || container.count == 0 {
-            listViewContainer?.setupLoading(true)
+            listViewHost?.setupLoading(true)
             fetchData(at: container.count, complete: { [weak self] values  in
                 guard let strongSelf = self else { return }
 
@@ -59,8 +59,8 @@ extension PaginationControllerProtocol {
                 let toCount = strongSelf.container.count
 
                 let indicesToBeInserted = Array(fromCount..<toCount)
-                strongSelf.listViewContainer?.setupLoading(false)
-                strongSelf.listViewContainer?.insert(at: indicesToBeInserted)
+                strongSelf.listViewHost?.setupLoading(false)
+                strongSelf.listViewHost?.insert(at: indicesToBeInserted)
             })
         }
     }

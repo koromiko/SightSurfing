@@ -8,12 +8,12 @@
 
 import UIKit
 
-protocol ListViewContainerProtocol: AnyObject {
+protocol ListViewHostProtocol: AnyObject {
     func insert(at indices: [Int])
     func setupLoading(_ isLoading: Bool)
 }
 
-extension ListViewContainerProtocol where Self: UITableViewController {
+extension ListViewHostProtocol where Self: UITableViewController {
     func insert(at indices: [Int]) {
         let indexPaths = indices.map { IndexPath(row: $0, section: 0) }
         let contentOffset = tableView.contentOffset
@@ -31,7 +31,7 @@ extension ListViewContainerProtocol where Self: UITableViewController {
     }
 }
 
-extension ListViewContainerProtocol where Self: UICollectionViewController {
+extension ListViewHostProtocol where Self: UICollectionViewController {
     func insert(at indices: [Int]) {
         let indexPaths = indices.map { IndexPath(row: $0, section: 0) }
         collectionView.performBatchUpdates({ [weak self] in

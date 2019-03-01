@@ -39,7 +39,7 @@ class PhotoListController: PaginationControllerProtocol {
     }
 
     // MARK: - Pagination conforming
-    weak var listViewContainer: ListViewContainerProtocol?
+    weak var listViewHost: ListViewHostProtocol?
     var perPage: Int {
         return Configuration.photoCountPerPage
     }
@@ -52,7 +52,7 @@ class PhotoListController: PaginationControllerProtocol {
         if isLoading { return }
         isLoading = true
         let currentPage = Int(container.count/perPage) + 1
-        service.searchPhoto(keyword: Configuration.positionName, page: currentPage, perPage: Configuration.photoCountPerPage) { [weak self] (photos, totalResults, error) in
+        service.searchPhoto(keyword: Configuration.positionName, page: currentPage, perPage: perPage) { [weak self] (photos, totalResults, error) in
 
             self?.totalCount = totalResults
             let cellViewModels = self?.buildCellViewModels(photos: photos) ?? []

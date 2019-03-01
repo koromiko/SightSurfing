@@ -33,7 +33,7 @@
 		B5D63823221D8188006681C3 /* response.json in Resources */ = {isa = PBXBuildFile; fileRef = B5D63813221B0EDF006681C3 /* response.json */; };
 		B5D63825221DA5D7006681C3 /* PhotoListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D63824221DA5D7006681C3 /* PhotoListCellViewModel.swift */; };
 		B5D63828221EFF6C006681C3 /* PaginationControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D63827221EFF6C006681C3 /* PaginationControllerProtocol.swift */; };
-		B5D6382A221F033F006681C3 /* ListViewContainerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D63829221F033F006681C3 /* ListViewContainerProtocol.swift */; };
+		B5D6382A221F033F006681C3 /* ListViewHostProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D63829221F033F006681C3 /* ListViewHostProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,7 +76,7 @@
 		B5D63821221D6D25006681C3 /* PhotoListFooterLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListFooterLoadingView.swift; sourceTree = "<group>"; };
 		B5D63824221DA5D7006681C3 /* PhotoListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListCellViewModel.swift; sourceTree = "<group>"; };
 		B5D63827221EFF6C006681C3 /* PaginationControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationControllerProtocol.swift; sourceTree = "<group>"; };
-		B5D63829221F033F006681C3 /* ListViewContainerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewContainerProtocol.swift; sourceTree = "<group>"; };
+		B5D63829221F033F006681C3 /* ListViewHostProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewHostProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,7 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				B5D63827221EFF6C006681C3 /* PaginationControllerProtocol.swift */,
-				B5D63829221F033F006681C3 /* ListViewContainerProtocol.swift */,
+				B5D63829221F033F006681C3 /* ListViewHostProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -365,7 +365,7 @@
 				B5D63828221EFF6C006681C3 /* PaginationControllerProtocol.swift in Sources */,
 				B54CA7E7220F1A25006CAA1E /* UIView+Autolayout.swift in Sources */,
 				B54CA7DA220F1927006CAA1E /* PhotoService.swift in Sources */,
-				B5D6382A221F033F006681C3 /* ListViewContainerProtocol.swift in Sources */,
+				B5D6382A221F033F006681C3 /* ListViewHostProtocol.swift in Sources */,
 				B5D63820221C4F00006681C3 /* ImageDownloader.swift in Sources */,
 				B54CA7B2220F1842006CAA1E /* AppDelegate.swift in Sources */,
 				B5D63822221D6D25006681C3 /* PhotoListFooterLoadingView.swift in Sources */,

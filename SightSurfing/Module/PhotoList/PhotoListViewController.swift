@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PhotoListViewController: UITableViewController, ListViewContainerProtocol {
+class PhotoListViewController: UITableViewController, ListViewHostProtocol {
     private var footer: UITableViewHeaderFooterView?
 
     private var controller: PhotoListController
@@ -16,7 +16,7 @@ class PhotoListViewController: UITableViewController, ListViewContainerProtocol 
     init(controller: PhotoListController = PhotoListController()) {
         self.controller = controller
         super.init(style: .grouped)
-        controller.listViewContainer = self
+        controller.listViewHost = self
         initView()
         initTableView()
     }
